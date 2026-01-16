@@ -1,34 +1,38 @@
 return {
   {
-    "nvim-telescope/telescope-project.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim" },
+    "ahmedkhalf/project.nvim",
     config = function()
-      require("telescope").load_extension("project")
-      require("telescope._extensions.project.config").setup({
-        base_dirs = {
-          "~/dev/nu",
-        },
-        hidden_files = false,
-        order_by = "asc",
-        search_by = "title",
+      require("project_nvim").setup({
+        detection_methods = { "pattern", "lsp" },
+        patterns = { ".git", "project.clj", "package.json" },
+        silent_chdir = true,
       })
     end,
-    keys = {
-      { "<leader>fp", "<cmd>Telescope project<cr>", desc = "Find Projects" },
-    },
   },
   {
-    "nvimdev/dashboard-nvim",
-    optional = true,
-    opts = function(_, opts)
-      local projects_button = {
-        action = "Telescope project",
-        desc = " All Projects",
-        icon = " ",
-        key = "p",
-      }
-      
-      table.insert(opts.config.center, 2, projects_button)
+    "nvim-telescope/telescope-project.nvim",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+    },
+    config = function()
+      require("telescope").setup({
+        extensions = {
+          project = {
+            base_dirs = {
+              { path = "~/dev/nu", max_depth = 4 },
+            },
+            hidden_files = false,
+            order_by = "recent",
+            search_by = "title",
+            on_project_selected = function(prompt_bufnr)
+              local project_actions = require("telescope._extensions.project.actions")
+              project_actions.change_working_directory(prompt_bufnr, false)
+            end,
+          },
+        },
+      })
+
+      require("telescope").load_extension("project")
     end,
   },
 }
