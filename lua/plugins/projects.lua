@@ -66,6 +66,11 @@ return {
       
       vim.api.nvim_set_hl(0, "IncSearch", { fg = "#000000", bg = "#CC7832", bold = true })
       vim.api.nvim_set_hl(0, "Search", { fg = "#000000", bg = "#CC7832" })
+      
+      vim.api.nvim_set_hl(0, "Pmenu", { fg = "#A9B7C6", bg = "#313335" })
+      vim.api.nvim_set_hl(0, "PmenuSel", { fg = "#000000", bg = "#CC7832", bold = true })
+      vim.api.nvim_set_hl(0, "PmenuSbar", { bg = "#3E4042" })
+      vim.api.nvim_set_hl(0, "PmenuThumb", { bg = "#555555" })
     end,
   },
 }

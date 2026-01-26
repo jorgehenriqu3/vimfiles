@@ -17,6 +17,7 @@
   "mini.ai": { "branch": "main", "commit": "9eae720f2b20f6ad28cbfa0ddc524e10dc2c3201" },
   "mini.icons": { "branch": "main", "commit": "efc85e42262cd0c9e1fdbf806c25cb0be6de115c" },
   "mini.pairs": { "branch": "main", "commit": "4089aa6ea6423e02e1a8326a7a7a00159f6f5e04" },
+  "neo-tree.nvim": { "branch": "main", "commit": "1bd82358e516e3043796e207e64f50a11574af6e" },
   "neoconf.nvim": { "branch": "main", "commit": "bbe36f4d60ed096282f564ddae4e781e420a8270" },
   "neodarcula.nvim": { "branch": "main", "commit": "8efc533de0bf862cf7ddd8cb8e55d3704f7c84d8" },
   "neovim-project": { "branch": "main", "commit": "6ecf6253697b2964e9afef9d000357d887221a2c" },
