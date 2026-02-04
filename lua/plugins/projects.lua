@@ -69,4 +69,10 @@ return {
       debounce_delay = 1000,
     },
   },
+  {
+    "Olical/conjure",
+  },
+  {
+    "HiPhish/rainbow-delimiters.nvim",
+  },
 }
