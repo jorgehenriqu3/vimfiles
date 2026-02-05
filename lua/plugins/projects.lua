@@ -49,30 +49,4 @@ return {
       { "<leader>gg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
     },
   },
-  {
-    "AlexvZyl/nordic.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require("nordic").load()
-    end,
-  },
-  {
-    "okuuva/auto-save.nvim",
-    event = { "InsertLeave", "TextChanged" },
-    opts = {
-      enabled = true,
-      trigger_events = {
-        immediate_save = { "BufLeave", "FocusLost" },
-        defer_save = { "InsertLeave", "TextChanged" },
-      },
-      debounce_delay = 1000,
-    },
-  },
-  {
-    "Olical/conjure",
-  },
-  {
-    "HiPhish/rainbow-delimiters.nvim",
-  },
 }
